@@ -1,17 +1,21 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
+import Navbar from './components/Navbar';
+import HomePage from './pages/Home/HomePage';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
         <Router>
-          <div className="min-h-screen bg-[#f6f9fe] dark:bg-[#1A1C25] text-gray-900 dark:text-white">
+      
+          <Navbar />
             <Routes>
+            <Route path="/" element={<HomePage />} />
             </Routes>
-          </div>
+            <Footer/>
+  
         </Router>
-    </Suspense>
   );
 }
 
